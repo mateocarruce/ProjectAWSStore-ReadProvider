@@ -25,7 +25,7 @@ sequelize.sync().then(() => {
     console.log('✅ Database synced successfully!');
 
     server.listen({ port: 4003 }).then(({ url }) => {
-        console.log(`🚀 GraphQL server ready at ${url}`);
+        console.log(`🚀 GraphQL server papito ready at ${url}`);
     });
 
     app.listen(5003, () => {
