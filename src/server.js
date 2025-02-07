@@ -11,6 +11,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(providerRoutes); // ✅ Registrar las rutas
 
+// ✅ Permitir HTTP en Apollo Server
+process.env.APOLLO_DISABLE_SERVE_OVER_HTTPS = 'true';
+
 // ✅ Configurar Apollo Server con cacheo deshabilitado
 const typeDefs = fs.readFileSync(path.join(__dirname, 'graphql/schema.graphql'), 'utf-8');
 const server = new ApolloServer({
